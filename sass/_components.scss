@@ -6,6 +6,7 @@
 
 //search
 .search {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -63,6 +64,70 @@
         width: 2rem;
         fill: var(--color-grey-dark-3);
     }
+
+     &__input:focus ~ &__suggestions {
+        opacity: 1;
+        visibility: visible;
+     }
+
+    &__suggestions {
+        position: absolute;
+        top: 100%;
+        width: 80%;
+        z-index: 1000;
+        padding: 1.5rem 1rem;
+        background-color: var(--color-grey-light-1);
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    &__suggestions:hover {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    &__list {
+        list-style: none;
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+        padding: 1rem;
+        transition: all 0.2s ease-in-out;
+    }
+
+    &__item:hover {
+        transform: translateX(5px);
+    }
+
+    &__item-box {
+        margin-right: auto;
+    }
+
+    &__photo {
+        display: block;
+        width: 5rem;
+        height: 5rem;
+        border-radius: 50%;
+        margin-right: 1rem;
+    }
+
+    &__title {
+        font-weight: 600;
+        color: var(--color-primary);
+        font-size: 1.7rem;
+    }
+
+    &__location {
+        font-size: 1.2rem;
+    }
+
+    &__score {
+        font-weight: 600;
+        color: var(--color-primary);
+        font-size: 1.7rem;
+    }
 }
 
 //user-nav
@@ -70,6 +135,7 @@
     display: flex;
     align-items: center;
     align-self: stretch;
+    position: relative;
 
     & > * {
         padding: 0 2rem;
@@ -106,6 +172,181 @@
         display: flex;
         justify-content: center;
         align-items: center;
+    }
+
+    &__bookmarks {
+        display: block;
+        height: 31rem;
+        background-color: var(--color-grey-light-2);
+        position: absolute;
+        top: 100%;
+        right: 70%;
+        z-index: 11;
+        padding: 1.5rem 3rem;
+        border: 1px solid rgba(0,0,0,.1);
+        min-width: 40rem;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        @media only screen and (max-width: $bp-smallest) {
+            min-width: 20rem;
+        }
+    }
+
+    &__icon-box--bookmarks:hover ~ &__bookmarks {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    &__bookmarks-heading {
+        color: var(--color-grey-dark-2);
+        text-align: center;
+        margin: 0 1.5rem 1.5rem 1.5rem;
+        padding: 1rem 3rem;
+    }
+
+    &__bookmarks-list {
+        list-style: none;
+    }
+
+    &__bookmarks-item {
+        display: flex;
+        align-items: center;
+        padding-bottom: 1.5rem;
+        margin-bottom: 1.5rem;
+        border-bottom: 1px solid var(--color-grey-light-4);
+        transition: all 0.2s ease-in-out;
+
+        @media only screen and (max-width: $bp-smallest) {
+            flex-direction: column;
+        }
+    }
+
+    &__bookmarks-item:hover {
+        transform: translateX(5px);
+    }
+
+    &__bookmarks-photo {
+        display: block;
+        height: 8rem;
+        margin-right: 2rem;
+
+        @media only screen and (max-width: $bp-smallest) {
+            margin-right: 0;
+            margin-bottom: 1rem;
+        }
+    }
+
+    &__bookmarks-box {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__bookmarks-title {
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: var(--color-primary);
+    }
+
+    &__bookmarks-location {
+        font-size: 1.1rem;
+    }
+
+    &__icon-box--messages:hover ~ &__messages {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    &__messages {
+        display: block;
+        position: absolute;
+        top: 100%;
+        right: 30%;
+        min-height: 30rem;
+        min-width: 40rem;
+        background-color: var(--color-grey-light-2);
+        padding: 1.5rem;
+        z-index: 11;
+        opacity: 0;
+        visibility: hidden;
+        max-height: 30rem;
+        overflow-y: scroll;
+        border: 1px solid rgba(0,0,0,.1);
+
+        &:hover {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        @media only screen and (max-width: $bp-smallest) {
+            min-width: 30rem;
+        }
+    }
+
+    &__messages-heading {
+        color: var(--color-grey-dark-2);
+        text-align: center;
+        margin: 0 1.5rem 1.5rem 1.5rem;
+        padding: 1rem 3rem;
+    }
+
+    &__messages-list {
+        list-style: none;
+    }
+
+    &__messages-item {
+        display: flex;
+        align-items: center;
+        padding: 1rem 2.5rem;
+        transition: all 0.2s ease-in-out;
+        margin: 0 0.5rem;
+    }
+
+    &__messages-item:nth-of-type(2n + 1) {
+        background-color: var(--color-grey-light-1);
+    }
+
+    &__messages-item:hover {
+        transform: translateX(3px);
+    }
+
+    &__messages-avatar {
+        height: 9rem;
+        border-radius: 50%;
+        margin-right: 2rem;
+
+        &-active {
+            border: 3px solid var(--color-primary);
+        }
+
+        @media only screen and (max-width: $bp-smallest) {
+            height: 6rem;
+        }
+    }
+
+    &__messages-username {
+        color: var(--color-primary);
+        font-weight: 600;
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+
+        span {
+            margin-left: 1rem;
+        }
+    }
+
+    &__messages-text {
+        margin-bottom: 1rem;
+    }
+
+    &__messages-date {
+        font-weight: 600;
     }
 
     &__user-photo {
@@ -230,6 +471,71 @@
 .gallery {
     display: flex;
 
+    &__item {
+        position: relative;
+    }
+
+    &__item--1::after {
+        content: 'OUTDOOR POOL';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-size: 2rem;
+        text-align: center;
+        padding: 2rem;
+    }
+
+    &__item--2::after {
+        content: 'BEST RESTAURANTS';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-size: 2rem;
+        text-align: center;
+        padding: 2rem;
+    }
+
+    &__item--3::after {
+        content: 'BREATHTAKING VIEWS';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-size: 2rem;
+        text-align: center;
+        padding: 2rem;
+    }
+
+    &__item:hover::after {
+        opacity: 1;
+    }
+
     &__photo {
         width: 100%;
         display: block;
@@ -242,6 +548,7 @@
     display: flex;
     align-items: center;
     border-bottom: var(--border-bottom);
+    position: relative;
 
     &__heading {
         font-size: 2.25;
@@ -554,5 +861,39 @@
             outline: none;
             animation: pulsate 1s infinite;
         }
+    }
+}
+
+//popup with explanation
+.btn-popup {
+    position: absolute;
+    display: none;
+    top: 30%;
+    left: 10%;
+    z-index: 3000;
+
+    &__message {
+      font-size: 1.5rem;
+      font-weight: 600;
+      position: relative;
+      background-color: var(--color-primary-dark);
+      color: #fff;
+      padding: 2rem;
+      border-radius: 5px;
+    }
+
+    &__paragraph {
+      margin-bottom: 1rem;
+    }
+
+    &__close-btn {
+      border: none;
+      background-color: inherit;
+      color: #fff;
+      position: absolute;
+      top: 0;
+      right: 0;
+      margin-right: .5rem;
+      margin-top: .5rem;
     }
 }

@@ -22,21 +22,132 @@
                             <use xlink:href="img/sprite.svg#icon-magnifying-glass"></use>
                         </svg>
                     </button>
+
+                    <div class="search__suggestions">
+                        <h2 class="search__heading">Popular Search</h2>
+
+                        <ul class="search__list">
+                            <li class="search__item">
+                                <img
+                                    src="img/hotel-3.jpg"
+                                    alt="hotel 3"
+                                    class="search__photo"
+                                />
+                                <div class="search__item-box">
+                                    <p class="search__title">West Point Lighthouse</p>
+                                    <p class="search__location">PEI, Canada</p>
+                                </div>
+                                <p class="search__score">8.6</p>
+                            </li>
+
+                            <li class="search__item">
+                                <img
+                                    src="img/hotel-1.jpg"
+                                    alt="hotel 1"
+                                    class="search__photo"
+                                />
+                                <div class="search__item-box">
+                                    <p class="search__title">Hotel De Glace</p>
+                                    <p class="search__location">Quebec City, Canada</p>
+                                </div>
+                                <p class="search__score">7.9</p>
+                            </li>
+                        </ul>
+                    </div>
                 </form>
 
                 <nav class="user-nav">
-                    <div class="user-nav__icon-box">
+                    <div class="user-nav__icon-box user-nav__icon-box--bookmarks">
                         <svg class="user-nav__icon">
                             <use xlink:href="img/sprite.svg#icon-bookmark"></use>
                         </svg>
-                        <span class="user-nav__notification">7</span>
+                        <span class="user-nav__notification">2</span>
                     </div>
-                    <div class="user-nav__icon-box">
+
+                    <div class="user-nav__bookmarks">
+                        <h2 class="user-nav__bookmarks-heading">Bookmarks</h2>
+
+                        <ul class="user-nav__bookmarks-list">
+                            <li class="user-nav__bookmarks-item">
+                                <img
+                                    src="img/hotel-1.jpg"
+                                    alt="hotel 1"
+                                    class="user-nav__bookmarks-photo"
+                                />
+                                <div class="user-nav__bookmarks-box">
+                                    <p class="user-nav__bookmarks-title">Le Germain Ottawa</p>
+                                    <p class="user-nav__bookmarks-location">Ottawa, Canada</p>
+                                </div>
+                            </li>
+
+                            <li class="user-nav__bookmarks-item">
+                                <img
+                                    src="img/hotel-2.jpg"
+                                    alt="hotel 2"
+                                    class="user-nav__bookmarks-photo"
+                                />
+                                <div class="user-nav__bookmarks-box">
+                                    <p class="user-nav__bookmarks-title">Fairmont Chateau Laurier</p>
+                                    <p class="user-nav__bookmarks-location">Ottawa, Canada</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="user-nav__icon-box user-nav__icon-box--messages">
                         <svg class="user-nav__icon">
                             <use xlink:href="img/sprite.svg#icon-chat"></use>
                         </svg>
-                        <span class="user-nav__notification">13</span>
+                        <span class="user-nav__notification">3</span>
                     </div>
+                    
+                    <div class="user-nav__messages">
+                        <h2 class="user-nav__messages-heading">Messages</h2>
+
+                        <ul class="user-nav__messages-list">
+                            <li class="user-nav__messages-item">
+                                <img
+                                    src="img/user-1.jpg"
+                                    alt="user 1"
+                                    class="user-nav__messages-avatar"
+                                />
+                                <div class="user-nav__message-box">
+                                    <p class="user-nav__messages-username">Corey Taylor</p>
+                                    <p class="user-nav__messages-text">Hey Brian! Are you still looking...</p>
+                                    <p class="user-nav__messages-date">May 1, 2024</p>
+                                </div>
+                            </li>
+
+                            <li class="user-nav__messages-item">
+                                <img
+                                    src="img/user-2.jpg"
+                                    alt="user 2"
+                                    class="user-nav__messages-avatar user-nav__messages-avatar-active"
+                                />
+                                <div class="user-nav__message-box">
+                                    <p class="user-nav__messages-username">
+                                        Taylor Whiskers
+                                    </p>
+                                    <p class="user-nav__messages-text">Planning a new trip? Visit our...</p>
+                                    <p class="user-nav__messages-date">April 30, 2024</p>
+                                </div>
+                            </li>
+
+                            <li class="user-nav__messages-item">
+                                <img
+                                    src="img/user-3.jpg"
+                                    alt="user 3"
+                                    class="user-nav__messages-avatar user-nav__messages-avatar-active"
+                                />
+                                <div class="user-nav__message-box">
+                                    <p class="user-nav__messages-username">Marshall Mathers</p>
+                                    <p class="user-nav__messages-text">Hot deals! Only at our...</p>
+                                    <p class="user-nav__messages-date">April 19, 2024</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
                     <div class="user-nav__user">
                         <img src="img/user.jpg" alt="User photo" class="user-nav__user-photo">
                         <span class="user-nav__user-name">Brian</span>
@@ -56,7 +167,7 @@
                             </a>
                         </li>
                         <li class="side-nav__item">
-                            <a href="#" class="side-nav__link">
+                            <a href="#" class="side-nav__link popup-link">
                                 <svg class="side-nav__icon">
                                     <use xlink:href="img/sprite.svg#icon-aircraft-take-off"></use>
                                 </svg>
@@ -64,7 +175,7 @@
                             </a>
                         </li>
                         <li class="side-nav__item">
-                            <a href="#" class="side-nav__link">
+                            <a href="#" class="side-nav__link popup-link">
                                 <svg class="side-nav__icon">
                                     <use xlink:href="img/sprite.svg#icon-key"></use>
                                 </svg>
@@ -72,7 +183,7 @@
                             </a>
                         </li>
                         <li class="side-nav__item">
-                            <a href="#" class="side-nav__link">
+                            <a href="#" class="side-nav__link popup-link">
                                 <svg class="side-nav__icon">
                                     <use xlink:href="img/sprite.svg#icon-map"></use>
                                 </svg>
@@ -85,17 +196,15 @@
                         &copy; 2024 Yegor Nino | For education purposes only
                     </div>
                 </nav>
-
-
                 <main class="hotel-view">
                     <div class="gallery">
-                        <figure class="gallery__item">
+                        <figure class="gallery__item gallery__item--1">
                             <img src="img/hotel-1.jpg" alt="Photo of hotel 1" class="gallery__photo">
                         </figure>
-                        <figure class="gallery__item">
+                        <figure class="gallery__item gallery__item--2">
                             <img src="img/hotel-2.jpg" alt="Photo of hotel 2" class="gallery__photo">
                         </figure>
-                        <figure class="gallery__item">
+                        <figure class="gallery__item gallery__item--3">
                             <img src="img/hotel-3.jpg" alt="Photo of hotel 3" class="gallery__photo">
                         </figure>
                     </div>
@@ -127,7 +236,7 @@
                             <svg class="overview__icon-location">
                                 <use xlink:href="img/sprite.svg#icon-location-pin"></use>
                             </svg>
-                            <button class="btn-inline">Albufeira, Portugal</button>
+                            <button class="btn-inline popup-link">Albufeira, Portugal</button>
                         </div>
 
                         <div class="overview__rating">
@@ -196,7 +305,7 @@
                                 </figcaption>
                             </figure>
 
-                            <button class="btn-inline">
+                            <button class="btn-inline popup-link">
                                 Show All
                                 <span>&rarr;</span>
                             </button>
@@ -208,13 +317,21 @@
                             Good news! We have 4 free rooms for your selected dates!
                         </h2>
 
-                        <button class="cta__btn">
+                        <button class="cta__btn popup-link">
                             <span class="cta__btn--visible">Book now</span>
                             <span class="cta__btn--invisible">Only 4 rooms left</span>
                         </button>
                     </div>
+
+                    <div class="btn-popup">
+                        <div class="btn-popup__message">
+                            <p class="btn-popup__paragraph">While this link would typically take you somewhere, on this mockup landing page, it's just for show.</p>
+                            <button class="btn-popup__close-btn">X</button>
+                        </div>
+                    </div>
                 </main>
             </div>
         </div>
+        <script src="js/script.js"></script>
     </body>
 </html>
